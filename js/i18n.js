@@ -19,6 +19,59 @@
         menu: "Menu",
         aria: "Navigation principale",
       },
+      upgrades: {
+        whyUs: "Pourquoi choisir notre établissement ?",
+        whyUsTitle: "Un cadre qui donne<br /><em>envie d’avancer.</em>",
+        whyUsDescription:
+          "Une attention portée aux apprentissages, à l’environnement et à la sérénité de chaque étudiant.",
+        prereg: "Pré-inscription",
+        preregTitle: "Demandez votre<br /><em>inscription.</em>",
+        preregDescription:
+          "Parlez-nous de votre projet scolaire. Notre équipe vous répond avec les informations adaptées à votre situation.",
+        parentFeedback: "Exemples d’avis parents",
+        parentFeedbackTitle: "Une relation<br /><em>qui compte.</em>",
+        parentFeedbackDescription:
+          "Des exemples de retours qui illustrent l’attention portée à la communication et à l’accompagnement.",
+        featureStem: "Activités scientifiques & STEM",
+        featureStemDescription:
+          "Apprentissage pratique par la technologie, la robotique et l’expérimentation.",
+        featureTransport: "Transport scolaire sécurisé",
+        featureTransportDescription:
+          "Un cadre quotidien rassurant pour les étudiants et les familles.",
+        featureLanguages: "Langues étrangères renforcées",
+        featureLanguagesDescription:
+          "Une pratique régulière pour gagner en confiance dans les langues.",
+        featureSafety: "Environnement sûr",
+        featureSafetyDescription:
+          "Un environnement calme et respectueux, pensé pour apprendre.",
+        studentName: "Nom complet de l'élève",
+        schoolLevel: "Niveau scolaire",
+        guardianName: "Nom du parent / responsable",
+        guardianPhone: "Numéro de téléphone",
+        optionalMessage: "Message (facultatif)",
+        requestInfo: "Demander des informations",
+        contactWhatsapp: "Contacter sur WhatsApp",
+        chooseProgram: "Choisir un programme",
+        requestForm: "Votre demande",
+        frontendDemo: "Interaction frontend · Démo",
+        sampleParent: "Parent · Exemple de contenu",
+        parentCommunication: "Communication et réactivité",
+        parentTeaching: "Qualité de l’enseignement",
+        parentEnvironment: "Environnement d’apprentissage moderne",
+        parentCommunicationText:
+          "Le contact avec l’équipe est simple et rapide, et nous apprécions particulièrement l’accompagnement proposé aux étudiants.",
+        parentTeachingText:
+          "La pédagogie offre aux étudiants un cadre clair tout en laissant une place à la curiosité et à l’expérimentation.",
+        parentEnvironmentText:
+          "L’environnement moderne crée un rythme positif pour apprendre, échanger et grandir.",
+        preregSuccess: "Votre demande a été envoyée avec succès !",
+        flow: [
+          "Demandez des informations",
+          "Choisissez votre programme",
+          "Déposez votre demande",
+          "Commencez votre parcours",
+        ],
+      },
       hero: {
         eyebrow: "École supérieure · Rabat",
         title: "Construisez aujourd’hui<br /><em>votre avenir</em> de demain.",
@@ -40,6 +93,19 @@
         support: "Accompagnement",
       },
       sections: {
+        whyUs: "Pourquoi choisir notre établissement ?",
+        whyUsTitle: "Un cadre qui donne<br /><em>envie d’avancer.</em>",
+        whyUsDescription:
+          "Une attention portée aux apprentissages, à l’environnement et à la sérénité de chaque étudiant.",
+        prereg: "Pré-inscription",
+        preregTitle: "Demandez votre<br /><em>inscription.</em>",
+        preregDescription:
+          "Parlez-nous de votre projet scolaire. Notre équipe vous répond avec les informations adaptées à votre situation.",
+        parentFeedback: "Exemples d’avis parents",
+        parentFeedbackTitle: "Une relation<br /><em>qui compte.</em>",
+        parentFeedbackDescription:
+          "Des exemples de retours qui illustrent l’attention portée à la communication et à l’accompagnement.",
+        preregContact: "Contacter sur WhatsApp",
         expertise: "Notre expertise",
         programsTitle: "Des formations qui<br /><em>ouvrent des portes.</em>",
         programsDescription:
@@ -85,6 +151,20 @@
         mapLink: "Ouvrir l’itinéraire",
       },
       labels: {
+        whatsappShort: "WhatsApp",
+        requestForm: "Votre demande",
+        frontendDemo: "Interaction frontend · Démo",
+        studentName: "Nom complet de l'élève",
+        schoolLevel: "Niveau scolaire",
+        guardianName: "Nom du parent / responsable",
+        guardianPhone: "Numéro de téléphone",
+        optionalMessage: "Message (facultatif)",
+        contactWhatsapp: "Contacter sur WhatsApp",
+        featureStem: "Activités scientifiques & STEM",
+        featureTransport: "Transport scolaire sécurisé",
+        featureLanguages: "Langues étrangères renforcées",
+        featureSafety: "Environnement sûr",
+        sampleParent: "Parent · Exemple de contenu",
         excellence: "Excellence",
         innovation: "Innovation · Accompagnement",
         learnTogether: "Apprendre ensemble",
@@ -124,6 +204,7 @@
         rabat: "Rabat · Maroc",
       },
       actions: {
+        preregSuccess: "Votre demande a été envoyée avec succès !",
         required: "Ce champ est requis.",
         validEmail: "Indiquez une adresse email valide.",
         formError: "Vérifiez les champs indiqués pour continuer.",
@@ -301,6 +382,60 @@
         info: "Request information",
         menu: "Menu",
         aria: "Main navigation",
+      },
+      upgrades: {
+        whyUs: "Why choose our institution?",
+        whyUsTitle:
+          "A framework that makes you<br /><em>want to move forward.</em>",
+        whyUsDescription:
+          "Careful attention to learning, environment and every student's sense of confidence.",
+        prereg: "Pre-registration",
+        preregTitle: "Request<br /><em>admission.</em>",
+        preregDescription:
+          "Tell us about your school plans. Our team will reply with information suited to your situation.",
+        parentFeedback: "Sample parent feedback",
+        parentFeedbackTitle: "A relationship<br /><em>that matters.</em>",
+        parentFeedbackDescription:
+          "Examples of feedback reflecting the care given to communication and guidance.",
+        featureStem: "Scientific & STEM activities",
+        featureStemDescription:
+          "Practical learning through technology, robotics and experimentation.",
+        featureTransport: "Safe school transport",
+        featureTransportDescription:
+          "A reassuring daily framework for students and families.",
+        featureLanguages: "Enhanced foreign languages",
+        featureLanguagesDescription:
+          "Regular practice to build confidence across languages.",
+        featureSafety: "Safe environment",
+        featureSafetyDescription:
+          "A calm, respectful environment designed for learning.",
+        studentName: "Student full name",
+        schoolLevel: "Grade / level",
+        guardianName: "Parent / guardian name",
+        guardianPhone: "Phone number",
+        optionalMessage: "Message (optional)",
+        requestInfo: "Request information",
+        contactWhatsapp: "Contact on WhatsApp",
+        chooseProgram: "Choose a program",
+        requestForm: "Your request",
+        frontendDemo: "Frontend interaction · Demo",
+        sampleParent: "Parent · Sample content",
+        parentCommunication: "Communication and responsiveness",
+        parentTeaching: "Quality of teaching",
+        parentEnvironment: "Modern learning environment",
+        parentCommunicationText:
+          "The contact with the team is simple and quick, and we particularly appreciate the support offered to students.",
+        parentTeachingText:
+          "The teaching approach gives students a clear framework while leaving room for curiosity and experimentation.",
+        parentEnvironmentText:
+          "The modern environment creates a positive rhythm for learning, exchange and personal growth.",
+        preregSuccess: "Your request has been sent successfully!",
+        flow: [
+          "Request information",
+          "Choose your program",
+          "Submit your request",
+          "Start your journey",
+        ],
       },
       hero: {
         eyebrow: "Higher education · Rabat",
@@ -566,6 +701,49 @@
         info: "اطلب المعلومات",
         menu: "القائمة",
         aria: "التنقل الرئيسي",
+      },
+      upgrades: {
+        whyUs: "لماذا تختار مؤسستنا؟",
+        whyUsTitle: "إطار يمنحك<br /><em>الرغبة في التقدم.</em>",
+        whyUsDescription: "اهتمام بالتعلم والبيئة وراحة كل طالب.",
+        prereg: "طلب التسجيل",
+        preregTitle: "اطلب<br /><em>التسجيل.</em>",
+        preregDescription:
+          "حدثنا عن مشروعك الدراسي. سيرد عليك فريقنا بالمعلومات المناسبة لوضعك.",
+        parentFeedback: "نماذج من آراء أولياء الأمور",
+        parentFeedbackTitle: "علاقة<br /><em>مهمة.</em>",
+        parentFeedbackDescription: "نماذج تعكس أهمية التواصل والمواكبة.",
+        featureStem: "الأنشطة العلمية وSTEM",
+        featureStemDescription:
+          "تعلم عملي عبر التكنولوجيا والروبوتيك والتجريب.",
+        featureTransport: "نقل مدرسي آمن",
+        featureTransportDescription: "إطار يومي مطمئن للطلاب والعائلات.",
+        featureLanguages: "لغات أجنبية مكثفة",
+        featureLanguagesDescription: "ممارسة منتظمة لبناء الثقة في اللغات.",
+        featureSafety: "محيط آمن",
+        featureSafetyDescription: "بيئة هادئة ومحترمة مخصصة للتعلم.",
+        studentName: "الاسم الكامل للتلميذ",
+        schoolLevel: "المستوى الدراسي",
+        guardianName: "اسم ولي الأمر",
+        guardianPhone: "رقم الهاتف",
+        optionalMessage: "رسالة (اختياري)",
+        requestInfo: "طلب المعلومات",
+        contactWhatsapp: "تواصل عبر واتساب",
+        chooseProgram: "اختر تكوينًا",
+        requestForm: "طلبك",
+        frontendDemo: "تفاعل أمامي · عرض تجريبي",
+        sampleParent: "ولي أمر · محتوى تجريبي",
+        parentCommunication: "التواصل وسرعة الرد",
+        parentTeaching: "جودة التعليم",
+        parentEnvironment: "بيئة تعلم حديثة",
+        parentCommunicationText:
+          "التواصل مع الفريق بسيط وسريع، ونقدر بشكل خاص المواكبة المقدمة للطلاب.",
+        parentTeachingText:
+          "تمنح المنهجية التعليمية الطلاب إطارًا واضحًا مع مساحة للفضول والتجريب.",
+        parentEnvironmentText:
+          "تخلق البيئة الحديثة إيقاعًا إيجابيًا للتعلم والتبادل والنمو الشخصي.",
+        preregSuccess: "تم إرسال طلبك بنجاح!",
+        flow: ["اطلب المعلومات", "اختر تكوينك", "أرسل طلبك", "ابدأ مسارك"],
       },
       hero: {
         eyebrow: "التعليم العالي · الرباط",

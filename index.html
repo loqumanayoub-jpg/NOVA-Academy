@@ -60,6 +60,9 @@
           <a class="nav-cta" href="#contact"
             >Demander des informations <span>↗</span></a
           >
+          <a class="nav-whatsapp" data-whatsapp href="#" aria-label="WhatsApp"
+            >WhatsApp</a
+          >
           <div class="language-switcher" aria-label="Choisir la langue">
             <button
               class="language-toggle"
@@ -158,6 +161,24 @@
         <a class="scroll-cue" href="#chiffres" aria-label="Découvrir la suite"
           >Défiler <span>↓</span></a
         >
+      </section>
+
+      <section class="section features-section" id="why-us">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <div class="eyebrow">
+                <span class="eyebrow-line"></span> Pourquoi nous choisir ?
+              </div>
+              <h2>Un cadre qui donne<br /><em>envie d’avancer.</em></h2>
+            </div>
+            <p>
+              Une attention portée aux apprentissages, à l’environnement et à la
+              sérénité de chaque étudiant.
+            </p>
+          </div>
+          <div class="feature-grid" id="feature-grid"></div>
+        </div>
       </section>
 
       <section class="stats-section" id="chiffres">
@@ -318,7 +339,106 @@
         </div>
       </section>
 
-      <section class="section testimonials-section">
+      <section class="section preregistration-section" id="pre-registration">
+        <div class="container preregistration-grid">
+          <div class="preregistration-copy reveal">
+            <div class="eyebrow">
+              <span class="eyebrow-line"></span> Pré-inscription
+            </div>
+            <h2>Demandez votre<br /><em>inscription.</em></h2>
+            <p>
+              Parlez-nous de votre projet scolaire. Notre équipe vous répond
+              avec les informations adaptées à votre situation.
+            </p>
+            <a class="text-link light-link" data-whatsapp href="#"
+              >Contacter sur WhatsApp <span>→</span></a
+            >
+          </div>
+          <form
+            class="application-form preregistration-form reveal"
+            id="preregistration-form"
+            novalidate
+          >
+            <div class="form-heading">
+              <span>Votre demande</span
+              ><small>Interaction frontend · Démo</small>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="student-name">Nom complet de l'élève</label
+                ><input
+                  id="student-name"
+                  name="studentName"
+                  type="text"
+                  required
+                  aria-describedby="student-name-error"
+                /><small class="field-error" id="student-name-error"></small>
+              </div>
+              <div class="form-field">
+                <label for="school-level">Niveau scolaire</label
+                ><input
+                  id="school-level"
+                  name="schoolLevel"
+                  type="text"
+                  required
+                  aria-describedby="school-level-error"
+                /><small class="field-error" id="school-level-error"></small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="guardian-name">Nom du parent / responsable</label
+                ><input
+                  id="guardian-name"
+                  name="guardianName"
+                  type="text"
+                  required
+                  aria-describedby="guardian-name-error"
+                /><small class="field-error" id="guardian-name-error"></small>
+              </div>
+              <div class="form-field">
+                <label for="guardian-phone">Numéro de téléphone</label
+                ><input
+                  id="guardian-phone"
+                  name="guardianPhone"
+                  type="tel"
+                  required
+                  aria-describedby="guardian-phone-error"
+                /><small class="field-error" id="guardian-phone-error"></small>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="prereg-program">Programme souhaité</label
+              ><select
+                id="prereg-program"
+                name="program"
+                required
+                aria-describedby="prereg-program-error"
+              >
+                <option value="">Choisir un programme</option></select
+              ><small class="field-error" id="prereg-program-error"></small>
+            </div>
+            <div class="form-field">
+              <label for="prereg-message">Message (facultatif)</label
+              ><textarea id="prereg-message" name="message" rows="3"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">
+                Demander des informations <span>↗</span></button
+              ><button
+                class="text-link form-whatsapp"
+                type="button"
+                data-prereg-whatsapp
+              >
+                Contacter sur WhatsApp <span>→</span>
+              </button>
+            </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section testimonials-section" id="parent-feedback">
         <div class="container">
           <div class="section-heading reveal">
             <div>
@@ -512,6 +632,15 @@
         <span class="footer-location">Rabat · Maroc</span>
       </div>
     </footer>
+    <a
+      class="floating-whatsapp"
+      data-whatsapp
+      href="#"
+      aria-label="WhatsApp"
+      title="WhatsApp"
+    >
+      <span aria-hidden="true">◔</span>
+    </a>
     <div
       class="program-modal"
       id="program-modal"

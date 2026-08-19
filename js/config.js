@@ -2,7 +2,7 @@ window.NOVA_CONFIG = {
   academyName: "Nova Academy",
   phone: "+212 600 000 000",
   email: "contact@novaacademy.ma",
-  whatsapp: "+212 600 000 000",
+  whatsapp: "212645823515",
   address: "Rabat, Maroc",
   openingHours: "Lun — Ven · 09:00 — 18:00",
   social: {

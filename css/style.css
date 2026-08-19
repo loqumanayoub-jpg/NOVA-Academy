@@ -690,6 +690,162 @@ h2 em {
   max-width: 450px;
   margin: 26px 0;
 }
+.features-section {
+  background: var(--paper);
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.feature-card {
+  min-height: 220px;
+  padding: 28px;
+  background: var(--paper);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    outline-color 0.25s ease;
+}
+.feature-card:hover,
+.feature-card:focus-within {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-5px);
+  outline: 1px solid rgba(22, 121, 107, 0.35);
+  box-shadow: var(--shadow);
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  background: #e1efeb;
+  color: var(--green);
+  font-size: 19px;
+}
+.feature-card:nth-child(2) .feature-icon {
+  background: #f1e7d7;
+  color: #99743e;
+}
+.feature-card:nth-child(3) .feature-icon {
+  background: #e8e5f0;
+  color: #46416c;
+}
+.feature-card:nth-child(4) .feature-icon {
+  background: #e9e3d9;
+  color: var(--gold);
+}
+.feature-card h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font: 700 17px var(--display);
+  letter-spacing: -0.04em;
+}
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.preregistration-section {
+  background: var(--navy);
+  color: white;
+}
+.preregistration-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+  align-items: start;
+}
+.preregistration-copy h2 {
+  color: white;
+}
+.preregistration-copy h2 em {
+  color: var(--gold);
+}
+.preregistration-copy > p {
+  max-width: 370px;
+  color: #b7cbc5;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 25px 0 30px;
+}
+.preregistration-copy .eyebrow {
+  color: var(--gold);
+}
+.preregistration-copy .light-link {
+  color: white;
+}
+.preregistration-form {
+  margin: 0;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+.preregistration-form .form-heading,
+.preregistration-form .form-field label {
+  color: white;
+}
+.preregistration-form .form-heading small,
+.preregistration-form .field-error {
+  color: #b7cbc5;
+}
+.preregistration-form .form-field input,
+.preregistration-form .form-field select,
+.preregistration-form .form-field textarea {
+  background: rgba(255, 255, 255, 0.96);
+}
+.preregistration-form .form-whatsapp {
+  color: white;
+  border-color: var(--gold);
+}
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.preregistration-form .form-status.success {
+  color: #cde9dc;
+}
+.preregistration-form .form-status.error {
+  color: #f1b1a8;
+}
+.nav-whatsapp {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 12px;
+}
+.nav-whatsapp:hover {
+  color: var(--green-dark);
+}
+.floating-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 30;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: #159467;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(16, 44, 42, 0.22);
+  font-size: 27px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.floating-whatsapp:hover,
+.floating-whatsapp:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(16, 44, 42, 0.28);
+}
 .benefit-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1576,6 +1732,12 @@ input:focus-visible {
   .about-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .preregistration-grid {
+    gap: 55px;
+  }
   .faq-grid {
     gap: 60px;
   }
@@ -1744,6 +1906,13 @@ input:focus-visible {
   .program-grid {
     grid-template-columns: 1fr;
   }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .preregistration-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
   .program-card {
     min-height: 235px;
   }
@@ -1893,6 +2062,12 @@ input:focus-visible {
   .footer-location {
     display: block;
   }
+  .floating-whatsapp {
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
+  }
   .eyebrow {
     font-size: 9px;
   }
@@ -1966,6 +2141,14 @@ html[dir="rtl"] .toast {
   border-left: 0;
   border-right: 3px solid var(--gold);
 }
+html[dir="rtl"] .preregistration-copy,
+html[dir="rtl"] .preregistration-form {
+  text-align: right;
+}
+html[dir="rtl"] .floating-whatsapp {
+  right: auto;
+  left: 25px;
+}
 html[dir="rtl"] .program-details span,
 html[dir="rtl"] .text-link span,
 html[dir="rtl"] .button span {
@@ -2010,5 +2193,8 @@ html[dir="rtl"] .button span {
   }
   .toast {
     transition: none;
+  }
+  html[dir="rtl"] .floating-whatsapp {
+    left: 18px;
   }
 }

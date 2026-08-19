@@ -40,8 +40,14 @@
     };
     return values[i18n.locale][index] || [item.duration, item.level];
   };
-  const whatsappUrl = () =>
-    `https://wa.me/${config.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(i18n.locale === "ar" ? "مرحبًا، أود الحصول على معلومات حول أكاديمية نوفا." : i18n.locale === "en" ? "Hello, I would like more information about Nova Academy." : "Bonjour, je souhaite obtenir des informations sur Nova Academy.")}`;
+  const whatsappMessage = () =>
+    i18n.locale === "ar"
+      ? "السلام عليكم، أريد الحصول على مزيد من المعلومات حول تكوينات Nova Academy."
+      : i18n.locale === "en"
+        ? "Hello, I would like to get more information about Nova Academy's programs."
+        : "Bonjour, je souhaite obtenir plus d'informations sur les formations de Nova Academy.";
+  const whatsappUrl = (message = whatsappMessage()) =>
+    `https://wa.me/${config.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 
   const applyStaticTranslations = () => {
     const htmlBindings = {
@@ -53,6 +59,7 @@
       '.primary-nav a[href="#faq-section"]': "nav.faq",
       '.primary-nav a[href="#contact"]': "nav.contact",
       ".nav-cta": "nav.info",
+      ".nav-whatsapp": "upgrades.contactWhatsapp",
       ".hero .eyebrow": "hero.eyebrow",
       ".hero h1": "hero.title",
       ".hero-lead": "hero.description",
@@ -123,6 +130,27 @@
       ".gallery-item:nth-child(3) strong": "labels.gallery3",
       ".footer-brand p": "labels.footerTagline",
       "footer [data-whatsapp]": "labels.whatsapp",
+      ".features-section .eyebrow": "upgrades.whyUs",
+      ".features-section h2": "upgrades.whyUsTitle",
+      ".features-section .section-heading > p": "upgrades.whyUsDescription",
+      ".preregistration-copy .eyebrow": "upgrades.prereg",
+      ".preregistration-copy h2": "upgrades.preregTitle",
+      ".preregistration-copy > p": "upgrades.preregDescription",
+      ".preregistration-copy .text-link": "upgrades.contactWhatsapp",
+      ".preregistration-form .form-heading > span": "upgrades.requestForm",
+      ".preregistration-form .form-heading small": "upgrades.frontendDemo",
+      'label[for="student-name"]': "upgrades.studentName",
+      'label[for="school-level"]': "upgrades.schoolLevel",
+      'label[for="guardian-name"]': "upgrades.guardianName",
+      'label[for="guardian-phone"]': "upgrades.guardianPhone",
+      'label[for="prereg-message"]': "upgrades.optionalMessage",
+      ".preregistration-form > .form-actions .button": "upgrades.requestInfo",
+      ".preregistration-form .form-whatsapp": "upgrades.contactWhatsapp",
+      ".preregistration-section .eyebrow": "upgrades.prereg",
+      ".testimonials-section .eyebrow": "upgrades.parentFeedback",
+      ".testimonials-section h2": "upgrades.parentFeedbackTitle",
+      ".testimonials-section .section-heading > p":
+        "upgrades.parentFeedbackDescription",
     };
     Object.entries(htmlBindings).forEach(([selector, key]) => {
       const element = $(selector);
@@ -214,6 +242,26 @@
       .join("");
     $("#program").innerHTML =
       `<option value="">${t("labels.chooseProgram")}</option>${data.programs.map((item, index) => `<option value="${index}">${dynamic("programs", index, 0, item.title)}</option>`).join("")}`;
+    $("#prereg-program").innerHTML =
+      `<option value="">${t("upgrades.chooseProgram")}</option>${data.programs.map((item, index) => `<option value="${index}">${dynamic("programs", index, 0, item.title)}</option>`).join("")}`;
+    $("#feature-grid").innerHTML = data.features
+      .map(
+        (item, index) =>
+          `<article class="feature-card reveal"><div class="feature-icon" aria-hidden="true">${item.icon}</div><h3>${t(`upgrades.feature${item.key[0].toUpperCase()}${item.key.slice(1)}`)}</h3><p>${t(`upgrades.feature${item.key[0].toUpperCase()}${item.key.slice(1)}Description`)}</p></article>`,
+      )
+      .join("");
+    $("#process-list").innerHTML = data.admissionsFlow
+      .map(
+        (item, index) =>
+          `<div class="process-step reveal"><span class="process-num">${item.number}</span><div><h3>${t("upgrades.flow")[index]}</h3><p>${t("upgrades.preregDescription")}</p></div></div>`,
+      )
+      .join("");
+    $("#testimonial-grid").innerHTML = data.parentFeedback
+      .map(
+        (item) =>
+          `<article class="testimonial reveal"><div class="person"><div class="person-avatar">${item.initials}</div><div class="person-info"><strong>${t(`upgrades.parent${item.key[0].toUpperCase()}${item.key.slice(1)}`)}</strong><span>${t("upgrades.sampleParent")}</span></div></div><p class="testimonial-quote">“${t(`upgrades.parent${item.key[0].toUpperCase()}${item.key.slice(1)}Text`)}”</p></article>`,
+      )
+      .join("");
     $("#contact-details").innerHTML =
       `<div class="contact-detail"><span class="detail-icon" aria-hidden="true">↗</span><div><strong>${i18n.locale === "ar" ? "الهاتف" : i18n.locale === "en" ? "Phone" : "Téléphone"}</strong><a href="tel:${config.phone.replace(/\s/g, "")}">${config.phone}</a></div></div><div class="contact-detail"><span class="detail-icon" aria-hidden="true">@</span><div><strong>${i18n.locale === "ar" ? "البريد الإلكتروني" : "Email"}</strong><a href="mailto:${config.email}">${config.email}</a></div></div><div class="contact-detail"><span class="detail-icon" aria-hidden="true">◌</span><div><strong>${i18n.locale === "ar" ? "واتساب" : "WhatsApp"}</strong><a data-whatsapp href="#">${config.whatsapp}</a></div></div><div class="contact-detail"><span class="detail-icon" aria-hidden="true">⌖</span><div><strong>${i18n.locale === "ar" ? "العنوان" : i18n.locale === "en" ? "Address" : "Adresse"}</strong><span>${i18n.locale === "ar" ? "الرباط، المغرب" : i18n.locale === "en" ? "Rabat, Morocco" : config.address}</span></div></div><div class="contact-detail"><span class="detail-icon" aria-hidden="true">◷</span><div><strong>${i18n.locale === "ar" ? "أوقات العمل" : i18n.locale === "en" ? "Opening hours" : "Horaires"}</strong><span>${config.openingHours}</span></div></div>`;
   };
@@ -224,6 +272,10 @@
       link.target = "_blank";
       link.rel = "noopener";
     });
+    $(".floating-whatsapp").setAttribute(
+      "aria-label",
+      t("upgrades.contactWhatsapp"),
+    );
     $("[data-map-link]").href = config.mapEmbedUrl;
     $("[data-map-link]").target = "_blank";
     $("[data-map-link]").rel = "noopener";
@@ -259,9 +311,10 @@
       };
     });
     if (navObserver) navObserver.disconnect();
-    const navLinks = $$('a[href^="#"]', nav).filter((link) =>
-      document.querySelector(link.getAttribute("href")),
-    );
+    const navLinks = $$('a[href^="#"]', nav).filter((link) => {
+      const href = link.getAttribute("href");
+      return href && href.length > 1 && document.querySelector(href);
+    });
     navObserver = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((entry) => entry.isIntersecting)[0];
@@ -318,6 +371,20 @@
     );
     $("[data-modal-contact]").onclick = closeModal;
     $("#application-form").onsubmit = validateForm;
+    $("#preregistration-form").onsubmit = validatePreRegistration;
+    $("[data-prereg-whatsapp]").onclick = () => {
+      const student = $("#student-name").value.trim() || "—";
+      const program =
+        $("#prereg-program").selectedOptions[0]?.textContent ||
+        t("upgrades.chooseProgram");
+      const message =
+        i18n.locale === "ar"
+          ? `السلام عليكم، أريد الحصول على معلومات حول تسجيل ${student} في ${program}.`
+          : i18n.locale === "en"
+            ? `Hello, I would like information about admission for ${student} in ${program}.`
+            : `Bonjour, je souhaite obtenir des informations pour l'inscription de ${student} en ${program}.`;
+      window.open(whatsappUrl(message), "_blank", "noopener");
+    };
     $(".newsletter form").onsubmit = (event) => {
       event.preventDefault();
       const button = $("button", event.currentTarget);
@@ -355,6 +422,45 @@
       form.reset();
       const toast = $("#form-toast");
       toast.textContent = t("actions.formSuccess");
+      toast.hidden = false;
+      toast.classList.add("visible");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("visible");
+        setTimeout(() => {
+          toast.hidden = true;
+        }, 250);
+      }, 4200);
+    }
+  };
+
+  const validatePreRegistration = (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    let valid = true;
+    form.querySelectorAll("[required]").forEach((field) => {
+      const error = document.getElementById(`${field.id}-error`);
+      const hasValue =
+        typeof field.value === "string" && field.value.trim().length > 0;
+      const message = hasValue ? "" : t("actions.required");
+      field.classList.remove("invalid");
+      if (error) error.textContent = "";
+      if (message) {
+        field.classList.add("invalid");
+        if (error) error.textContent = message;
+        valid = false;
+      }
+    });
+    const status = $(".form-status", form);
+    status.textContent = valid
+      ? t("upgrades.preregSuccess")
+      : t("actions.formError");
+    status.classList.toggle("success", valid);
+    status.classList.toggle("error", !valid);
+    if (valid) {
+      form.reset();
+      const toast = $("#form-toast");
+      toast.textContent = t("upgrades.preregSuccess");
       toast.hidden = false;
       toast.classList.add("visible");
       clearTimeout(toastTimer);

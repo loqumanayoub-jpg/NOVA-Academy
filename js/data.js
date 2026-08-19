@@ -97,6 +97,23 @@ window.NOVA_DATA = {
     "Compétences recherchées",
     "Projets réels et professionnalisants",
   ],
+  features: [
+    { icon: "⌘", key: "stem" },
+    { icon: "⌖", key: "transport" },
+    { icon: "文", key: "languages" },
+    { icon: "✦", key: "safety" },
+  ],
+  parentFeedback: [
+    { initials: "01", key: "communication" },
+    { initials: "02", key: "teaching" },
+    { initials: "03", key: "environment" },
+  ],
+  admissionsFlow: [
+    { number: "01", key: "information" },
+    { number: "02", key: "choose" },
+    { number: "03", key: "request" },
+    { number: "04", key: "start" },
+  ],
   journey: [
     {
       number: "01",
